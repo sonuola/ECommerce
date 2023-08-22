@@ -1,0 +1,50 @@
+.container{
+   
+    /* width:100%;
+    height:100%; */
+    margin-left:10px;
+}
+
+.cardContainer{
+    height:70px;
+    width:200px;
+    background-color:#FFB5E3;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    border-radius:10px;
+}
+
+.createCategoryButton{
+    background-color:lightblue;
+    border-radius:8px;
+    width:12%;
+    height:40px;
+    justify-content:center;
+    align-items:center;
+    display:flex;
+    align-self:flex-end;
+    margin:10px;
+}
+
+.cardsContainer{
+    display:flex;
+    gap:10px;
+}
+
+.buttonContainer{
+    display:flex;
+    justify-content:flex-end;
+}
+
+.modalContainer{
+    width:50%;
+    height:70%;
+    background-color:#DCE1E3;
+    padding:20%;
+    margin-left:25%;
+    margin-top:5%;
+    /* display:flex;
+    justify-self:center; */
+}

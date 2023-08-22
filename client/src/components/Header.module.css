@@ -1,0 +1,70 @@
+.navBar{
+    display: flex;
+    flex-direction:row;
+    justify-content:space-between;
+    background-color:red;
+    align-items:center;
+    /* margin-bottom:5px; */
+    height:50px;
+}
+
+.buttons{
+    display: flex;
+    flex-direction:row;
+    /* justify-content:space-between; */
+    justify-content: flex-end;
+    align-items:center;
+    gap:20px;
+    width:500px;
+    margin:0rem;
+    margin-right: 10px;;
+}
+
+.button{
+    margin-bottom:0rem;
+    color:black;
+    text-decoration: none;
+}
+.button:hover{
+    color:white;
+}
+
+.cartImage{
+    height:25px;
+    width:30px;
+}
+
+.searchBarAndValues{
+    display:flex;
+    flex-direction:column;
+    overflow:visible;
+}
+
+.searchResults{
+
+    padding-top:200px;
+    align-self:flex-end;
+    justify-self: flex-end;
+    background-color:red;
+}
+
+.footer{
+    height:43px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.logoImage{
+    height:45px;
+    width:45px;
+    border-radius:16px;
+}
+
+.logoAndTitle{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    margin-left:2px;
+    color:black;
+    text-decoration: none;
+}

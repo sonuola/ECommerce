@@ -1,0 +1,18 @@
+.container{
+    display:flex;
+    justify-content:space-between;
+}
+
+.mainData{
+    width:85%;
+    height:36.5rem;;
+    background-color:#EFFAFD;
+}
+
+.optionsContainer{
+    padding-left:10px;
+    background-color:#4A8BDF;
+    width:15%;
+    padding-top:30px;
+    color:white;
+}
