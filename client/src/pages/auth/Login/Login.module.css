@@ -1,0 +1,119 @@
+/* body {
+    background-color: #3770cc;
+    height:100%;
+  } */
+
+  .containerClass{
+    width:70%;
+    /* padding-bottom:20px; */
+    padding:40px;
+   /* margin-bottom:60px; */
+  }
+
+  .rowClass{
+        display:flex;
+        border-radius: 20px;
+        background-color:white;
+        border-radius:10px;
+        height:500px;
+  }
+
+  .imageClass{
+    width:50%;
+    border-radius:10px;
+  }
+
+  .bodyClass{
+    display:flex;
+    width:50%;
+    justify-content:center;
+  }
+
+  .nameAndLogo{
+    display:flex;
+    justify-content:center;
+    width:100%;
+  }
+
+  .logoImage{
+    width:90px;
+  }
+
+  .logoTextLoginPage{
+    font-size: 40px;
+    color:black;
+    padding:10px;
+  }
+
+  .cardBodyClass{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    margin-top:60px;
+  }
+
+  .signInText{
+    color:black;
+    font-size:20px;
+    margin:20px;
+  }
+
+  .inputBoxLogin{
+    width:70%;
+    height:40px;
+   margin-top:10px;
+   padding:10px;
+   border-radius: 10px;
+   border:1px solid black;
+   margin-bottom:15px;
+}
+
+.loginButtonLogin{
+    background-color:black;
+    width:70%;
+    height:40px;
+   margin-top:20px;
+   color:white;
+   font-size:16px;
+   display:flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 10px;
+}
+
+.createAccountButtonLogin{
+    /* margin:15px; */
+}
+
+.forgetAndRegisterButton{
+    margin-top:20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+    gap:5px;
+}
+
+.sideImageClass{
+    height:100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.cardClassLogin{
+    border-radius: 10px;
+}
+
+.loginPageContainer{
+    background-color:#EEE9E9;
+    /* margin-top:20px; */
+    display:flex;
+    justify-content:center;
+    height:650px;
+}
+
+.loginPageContainer a:hover{
+    background-color:white;
+    color:grey;
+}
