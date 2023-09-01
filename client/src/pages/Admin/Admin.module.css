@@ -5,7 +5,7 @@
 
 .mainData{
     width:85%;
-    height:36.5rem;;
+    min-height:650px;
     background-color:#EFFAFD;
 }
 
@@ -15,4 +15,8 @@
     width:15%;
     padding-top:30px;
     color:white;
+}
+
+.options{
+    cursor:pointer;
 }

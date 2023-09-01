@@ -1,0 +1,10 @@
+.icon{
+    color:black;
+}
+
+.icons{
+    display:flex;
+    justify-content:space-between;
+    width:90%;
+  margin:10px;
+}

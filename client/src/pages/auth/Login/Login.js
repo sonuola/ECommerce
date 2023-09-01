@@ -12,6 +12,7 @@ import toast, { Toaster } from "react-hot-toast";
 // import APIRoutes from "./../../Utils/APIRoutes.json"
 // import "./Login.component.css"
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../../context/auth";
 // import React from 'react';
 
 // let tabItemData = [
@@ -20,6 +21,7 @@ import { useNavigate } from "react-router-dom";
 //     {to:"/resetpassword", content: 'Reset Password'  },
 //   ]
 function Login() {
+  const [auth, setAuth] = useAuth();
   let [form, setForm] = useState({ username: "", password: "" });
   const navigate = useNavigate();
   //   const [cookies, setCookie] = useCookies(["sessionid"]);
@@ -42,6 +44,8 @@ function Login() {
       if (res.data.success) {
         // setcategories(data.category);
         console.log(res);
+        setAuth({ ...auth, user: res.data.user, token: res.data.token });
+        localStorage.setItem("auth", JSON.stringify(res.data));
         toast.success(res.data.message);
         setTimeout(() => {
           navigate("/");
@@ -139,7 +143,7 @@ function Login() {
   // }
 
   return (
-    <Layout>
+    <Layout title="Login">
       <div className={styles.loginPageContainer}>
         {/* <LoginComponent/> */}
         <div className={styles.containerClass}>

@@ -1,0 +1,62 @@
+.createProductContainer{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:10px;
+    width:100%;
+}
+
+.productData{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    width:100%;
+}
+.inputBox{
+    margin-left:auto;
+    border-radius:5px;
+    width:100%;
+    padding:4px;
+    border:1px solid black;
+}
+
+.inputBox::placeholder{
+    color:lightgray;
+    font-weight: 100;
+}
+
+.selectBox{
+    margin-left:auto;
+    border-radius:7px;
+    width:100%;
+    /* padding:10px; */
+    /* height:50px; */
+    border:1px solid black;
+}
+
+.cateAndPrice{
+    display:flex;
+    justify-content: space-between;
+    width:90%;
+}
+
+.descriptionBox{
+    margin-left:auto;
+    border-radius:5px;
+    width:100%;
+    padding:4px;
+    border:1px solid black;
+    height:150px;
+}
+
+.descriptionBox::placeholder{
+    color:lightgray;
+    font-weight: 100;
+}
+
+.label{
+    width:90%;
+}
