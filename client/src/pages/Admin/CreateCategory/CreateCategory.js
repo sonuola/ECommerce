@@ -1,7 +1,7 @@
 import react, { useEffect, useState } from "react";
 import Layout from "../../../components/Layout";
 import axios from "axios";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import styles from "./CreateCategory.module.css";
 import CategoryCard from "./CategoryCard";
 import Modal from "react-modal";
@@ -12,7 +12,8 @@ const CreateCategory = () => {
   const [isCreateCategoryModalOpen, setIsCreateCategoryModalOpen] =
     useState(false);
 
-  const [categories, setcategories] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [newCategoryName, setNewCategoryName] = useState("");
 
   const getAllCategories = async () => {
     try {
@@ -20,7 +21,7 @@ const CreateCategory = () => {
         `${process.env.REACT_APP_API}/api/v1/category/get-category`
       );
       if (data.success) {
-        setcategories(data.category);
+        setCategories(data.category);
         console.log(data);
       }
     } catch (error) {
@@ -39,6 +40,26 @@ const CreateCategory = () => {
     // });
   };
 
+  const onCreateCategory = async () => {
+    try {
+      const res = await axios.post(
+        `${process.env.REACT_APP_API}/api/v1/category/create-category`,
+        { name: newCategoryName }
+      );
+      console.log(res);
+      if (res.data.success) {
+        toast.success(res.data.message);
+        setTimeout(() => {
+          setIsCreateCategoryModalOpen(false);
+          getAllCategories();
+        }, 2000);
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error("Something went wrong in creating category");
+    }
+  };
+
   useEffect(() => {
     getAllCategories();
   }, []);
@@ -51,7 +72,32 @@ const CreateCategory = () => {
           setIsCreateCategoryModalOpen(false);
         }}
       >
-        Header Body
+        <div className={styles.createCategoryDataContainer}>
+          <h3>Enter the name of the category</h3>
+          <input
+            placeholder="Enter Category Name"
+            className={styles.inputBoxLogin}
+            onChange={(e) => {
+              setNewCategoryName(e.target.value);
+            }}
+          />
+          <div className={styles.buttons}>
+            <div
+              className={styles.createCategorySubmitButton}
+              onClick={onCreateCategory}
+            >
+              Create Category
+            </div>
+            <div
+              className={styles.cancelButton}
+              onClick={() => {
+                setIsCreateCategoryModalOpen(false);
+              }}
+            >
+              Cancel
+            </div>
+          </div>
+        </div>
       </Modal>
       <div className={styles.container}>
         <div
@@ -65,28 +111,13 @@ const CreateCategory = () => {
         <div className={styles.cardsContainer}>
           {console.log(categories.length)}
           {categories.map((cate) => {
-            return <CategoryCard cate={cate} />;
+            return (
+              <CategoryCard cate={cate} getAllCategories={getAllCategories} />
+            );
           })}
-          {/* <div className={styles.modalContainer}>
-            <Modal
-              size="s"
-              isOpen={isCreateCategoryModalOpen}
-              toggle={() => {
-                setIsCreateCategoryModalOpen(!isCreateCategoryModalOpen);
-              }}
-            >
-              <ModalHeader
-                isOpen={isCreateCategoryModalOpen}
-                toggle={() => {
-                  setIsCreateCategoryModalOpen(!isCreateCategoryModalOpen);
-                }}
-              >
-                Popup
-              </ModalHeader>
-            </Modal>
-          </div> */}
         </div>
       </div>
+      <Toaster />
     </div>
   );
 };

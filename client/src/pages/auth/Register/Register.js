@@ -39,7 +39,7 @@ function Register() {
   };
 
   return (
-    <Layout>
+    <Layout title="Register User">
       <div className={styles.loginPageContainer}>
         <div className={styles.containerClass}>
           <div className={styles.cardClassLogin}>
